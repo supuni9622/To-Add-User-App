@@ -6,7 +6,7 @@ import {GlobalContext} from '../context/GlobalState'
 
 const UserList = () => {
 
-    const {users} = useContext(GlobalContext)
+    const {users, removeUser} = useContext(GlobalContext)
     console.log(users)
 
     return (
@@ -19,7 +19,7 @@ const UserList = () => {
                                 {user.name}
                              <div>
                                 <Link className ="btn btn-primary mr-1" to={`/edit/${user.id}`}> Edit </Link>
-                                <Button variant='danger'>Delete</Button>
+                                <Button variant='danger' onClick={() => removeUser(user.id)}>Delete</Button>
                             </div>
                         </ListGroup.Item>  
                     ))
