@@ -2,7 +2,6 @@ import React, {useContext, useState, useEffect} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import {Link, useHistory} from 'react-router-dom'
 import {GlobalContext} from '../context/GlobalState'
-import {v4 as uuid} from 'uuid'
 
 const EditUser = (props) => {
     const {users, editUser} = useContext(GlobalContext)
@@ -28,7 +27,7 @@ const EditUser = (props) => {
     useEffect(() => {
         const userId = currentUserId;
         console.log(typeof userId)
-        const selectedUser = users.find(user => user.id === Number(userId))
+        const selectedUser = users.find(user => user.id === userId)
         setSelectedUser(selectedUser)
         console.log(selectedUser)
     }, [currentUserId, users])

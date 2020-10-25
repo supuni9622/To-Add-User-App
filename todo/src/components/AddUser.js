@@ -9,13 +9,16 @@ const AddUser = () => {
     const history = useHistory()
     const [name, setName] = useState('')
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault()
+
         const newUser = {
             id: uuid(),
             name
         }
-        history.push('/')
         addUser(newUser)
+        history.push('/')
+       
     }
 
     const onChange =(e) => {

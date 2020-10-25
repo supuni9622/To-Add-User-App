@@ -12,19 +12,24 @@ const UserList = () => {
     return (
         <div className="container">
             <h1>User List</h1>
-            <ListGroup className='d-flex'>
-                {
-                    users.map(user => (
-                        <ListGroup.Item variant="info" className="d-flex justify-content-between">
+            {users.length > 0 ? 
+                <ListGroup className='d-flex'>
+                    {
+                        users.map(user => (
+                            <ListGroup.Item variant="info" className="d-flex justify-content-between" key={user.id}>
                                 {user.name}
-                             <div>
+                            <div>
                                 <Link className ="btn btn-primary mr-1" to={`/edit/${user.id}`}> Edit </Link>
                                 <Button variant='danger' onClick={() => removeUser(user.id)}>Delete</Button>
                             </div>
                         </ListGroup.Item>  
-                    ))
-                }
+                        ))
+                    }
             </ListGroup>
+            :
+            <h2 className="text-center">No users </h2>
+            }
+            
         </div>
     )
 }

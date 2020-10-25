@@ -3,11 +3,7 @@ import AppReducer from './AppReducer'
 
 //Initial State
 const initialState = {
-    users: [
-        {id: 1, name: 'Supuni'},
-        {id: 2, name: 'Nipuni'},
-        {id:3, name: 'Sachini'}
-    ]
+    users: []
 }
 
 // Craete Context

@@ -9,6 +9,7 @@ const AppReducer = (state, action) => {
             }
         case 'ADD_USER' : 
             return {
+                ...state,
                 users: [action.payload, ...state.users]
             }
         case 'EDIT_USER' : 
@@ -22,11 +23,12 @@ const AppReducer = (state, action) => {
             })
 
             return {
+                ...state,
                 users: updateUsers
             }
             
         default: 
-            return state
+            return state;
     }
 }
 
