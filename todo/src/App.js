@@ -10,7 +10,7 @@ function App() {
       <h1>To do app</h1>
       <Router>
         <Switch>
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route path="/add" component={AddUser}/>
           <Route path="/edit/:id" component={EditUser}/>
         </Switch>
