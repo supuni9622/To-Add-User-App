@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import {Link, useHistory} from 'react-router-dom'
 import {GlobalContext} from '../context/GlobalState'
@@ -6,14 +6,19 @@ import {GlobalContext} from '../context/GlobalState'
 const AddUser = () => {
     const {addUser} = useContext(GlobalContext)
     const history = useHistory()
+    const [name, setName] = useState('')
 
     const onSubmit = () => {
         const newUser = {
             id: 4,
-            name: 'Shenali'
+            name
         }
         history.push('/')
         addUser(newUser)
+    }
+
+    const onChange =(e) => {
+        setName(e.target.value)
     }
 
     return (
@@ -22,7 +27,7 @@ const AddUser = () => {
             <Form onSubmit={onSubmit}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>User Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter your name" />
+                    <Form.Control type="text" name='name' placeholder="Enter your name" value={name} onChange={onChange} />
                 </Form.Group>
   
                 <Button variant="primary" type="submit" onClick>
