@@ -6,8 +6,7 @@ import EditUser from './components/EditUser'
 
 function App() {
   return (
-    <div className="App">
-      <h1>To do app</h1>
+    <div>
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
