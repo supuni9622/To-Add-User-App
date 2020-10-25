@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import {Link, useHistory} from 'react-router-dom'
 import {GlobalContext} from '../context/GlobalState'
+import {v4 as uuid} from 'uuid'
 
 const AddUser = () => {
     const {addUser} = useContext(GlobalContext)
@@ -10,7 +11,7 @@ const AddUser = () => {
 
     const onSubmit = () => {
         const newUser = {
-            id: 4,
+            id: uuid(),
             name
         }
         history.push('/')
