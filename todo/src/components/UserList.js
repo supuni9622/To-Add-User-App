@@ -18,7 +18,7 @@ const UserList = () => {
                         <ListGroup.Item variant="info" className="d-flex justify-content-between">
                                 {user.name}
                              <div>
-                                <Link className ="btn btn-primary mr-1" to="/edit/1"> Edit </Link>
+                                <Link className ="btn btn-primary mr-1" to={`/edit/${user.id}`}> Edit </Link>
                                 <Button variant='danger'>Delete</Button>
                             </div>
                         </ListGroup.Item>  

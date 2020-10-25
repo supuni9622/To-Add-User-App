@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const EditUser = () => {
     return (
-        <div>
+        <div className="container">
             <h1>Edit User</h1>
             <Form>
                 <Form.Group controlId="formBasicEmail">

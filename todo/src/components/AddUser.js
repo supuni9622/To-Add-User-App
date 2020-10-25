@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const AddUser = () => {
     return (
-        <div>
+        <div className="container">
             <h1>Add User</h1>
             <Form>
                 <Form.Group controlId="formBasicEmail">
